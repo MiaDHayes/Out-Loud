@@ -1,8 +1,7 @@
 
 
-const mongoose = require('mongoose');
-const db = require('./db'); // Import your database connection
-const { Podcast } = require('../models/podcast'); // Import the Podcast model
+const db = require('../db'); // Import your database connection
+const Podcast = require('../models/podcast'); // Import the Podcast model
 
 async function seedDatabase() {
   try {

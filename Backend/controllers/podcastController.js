@@ -1,12 +1,17 @@
-const Podcast = require('../models/podcast');
+const Podcast = require('../models/podcast')
+
 
 const getAllPodcast = async (req,res) => {
     try {
-        const podcasts = await Podcast.find([])
-        res.json(podcasts)
-        console.log('yay podcast!!')
+        const podcastId = req.params.podcastId
+        const podcast = await Podcast.find()
+        if (!podcast) {
+            return res.status(400).json({message: 'Podcast not found'})
+        }
+        return res.status(200).json(podcast)
     } catch (error) {
-        return res.status(500).send(error.message);
+        console.error(error)
+        return res.status(500).json({message: 'Internal server error'});
     }
 }
 
@@ -18,46 +23,55 @@ const getPodcastById = async (req, res) => {
         if (podcast) {
             return res.json(podcast);
         }
-        return res.status(404).send('Podcast not found!');
+        return res.status(404).json({message: 'Podcast not found!'});
     } catch (error) {
-        return res.status(500).send(error.message);
+        return res.status(500).json({message: 'Internal Server Error'});
     }
 }
 
 const createPodcast = async (req, res) => {
     try {
-        const podcast = await new Podcast(req.body);
-        await podcast.save();
-        return res.status(201).json({podcast,});
+        const newPodcast = new Podcast({
+            title: req.body.title,
+            description: req.body.description,
+            author: req.body.author,
+            coverImageUrl: req.body.coverImageUrl
+        })
 
+        await newPodcast.save();
+        return res.status(201).json({message: "Podcast created successfully"});
     } catch (error) {
-        return res.status(500).json({ error: error.message});
+        console.error(error)
+        return res.status(500).json({message: "Failed to create podcast"});
     }
 }
 
 const updatePodcast = async (req, res) => {
+    const podcastId = req.params.id
+    const updateFields = req.body
     try {
-        let { id } = req.params;
-        let podcasts = await Podcast.findByIdAndUpdate(id, req.body, { new: true })
-        if (podcasts) {
-            return res.status(200).json(podcasts)
+        const updatedPodcast = await Podcast.findByIdAndUpdate(podcastId, updateFields, { new: true })
+        if (!updatedPodcast) {
+            return res.status(404).json({message: 'Podcast unable to update'})
         }
-        throw new Error("Podcasts not found")
+        return res.status(200).json(updatedPodcast)
     } catch (error) {
+        console.error(error)
         return res.status(500).send(error.message);
     }
 }
 
 const deletePodcast = async (req, res) => {
+    const podcastId = req.params.id
     try {
-        const { id } = req.params;
-        const deleted = await Podcast.findByIdAndDelete(id)
-        if (deleted) {
-            return res.status(200).send("Podcast deleted");
+        const deletedPodcast = await Podcast.findByIdAndDelete(podcastId)
+        if (!deletedPodcast) {
+            return res.status(404).json({message: "Podcast not found"});
         }
-        throw new Error("Podcast not found");
+        return res.status(200).json(deletedPodcast)
     } catch (error) {
-        return res.status(500).send(error.message);
+        console.error(error)
+        return res.status(500).json({message: "Internal server error"});
     }
 }
 

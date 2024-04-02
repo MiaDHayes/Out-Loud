@@ -11,6 +11,6 @@ mongoose
 
 
 
-const db = mongoose.connection
+// const db = mongoose.connection
 
-module.exports = db
+module.exports = mongoose.connection
