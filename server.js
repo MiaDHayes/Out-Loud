@@ -1,16 +1,25 @@
-const mongoose = require('mongoose')
+const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const db = require('./Backend/db/index')
+const Podcast = require('./Backend/models/podcast')
+const podcastController = require('./Backend/controllers/podcastController')
 
-mongoose
-    .connect('mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.5')
-    .then(() => {
-        console.log('Successfully connected to MongoDB Purr.')
-    })
-    .catch(e => {
-        console.error('Connection error', e.message)
-    })
+const app = express()
+const PORT = process.env.PORT || 3005
 
+//Middleware
+app.use(cors())
+app.use(bodyParser.json())
 
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
+app.get('/', (req, res) => res.send('Welcome Home'))
 
-const db = mongoose.connection
+//Routes for Podcasts
+app.get('/podcasts', podcastController.getAllPodcast)
+app.get('/podcast/:id', podcastController.getPodcastById)
+app.post('/podcast', podcastController.createPodcast)
+app.put('/podcast/:id', podcastController.updatePodcast)
+app.delete('/podcast/:id', podcastController.deletePodcast)
+app.get('*', (req, res) => {res.send('404 not found')})
 
-module.exports = db
