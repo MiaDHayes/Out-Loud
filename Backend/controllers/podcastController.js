@@ -1,9 +1,10 @@
-const { Podcast } = require('../models/podcast');
+const Podcast = require('../models/podcast');
 
 const getAllPodcast = async (req,res) => {
     try {
-        const podcasts = await Podcast.find()
+        const podcasts = await Podcast.find([])
         res.json(podcasts)
+        console.log('yay podcast!!')
     } catch (error) {
         return res.status(500).send(error.message);
     }
