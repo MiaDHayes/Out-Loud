@@ -61,8 +61,7 @@ Contributions are welcome! If you'd like to contribute to OUT LOUD, please follo
 
 ## Authors
 
-- John Doe (@johndoe)
-- Jane Smith (@janesmith)
+- Mia Hayes GitHub (MiaDHayes)
 
 ## License
 
