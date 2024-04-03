@@ -7,7 +7,7 @@ const Podcast = new Schema(
         description: {type: String, required: true},
         author: {type: String, required: false},
         coverImageUrl: {type: String, required: false},
-        // episode: [{type: Schema.Types.ObjectId, ref: 'Episode'}]
+        episode: [{type: Schema.Types.ObjectId, ref: 'Episode'}]
     },
     { timestamps: true }
 )
