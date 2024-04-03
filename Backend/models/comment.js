@@ -5,7 +5,7 @@ const Comment = new Schema(
     {
         content: {type: String, required: true},
         author: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
-        // post: {type: mongoose.Schema.Types.ObjectId, ref: 'Podcast', required: true},
+        podcast: [{type: mongoose.Schema.Types.ObjectId, ref: 'Podcast', required: true}],
     },
     { timestamps: true }
 )
