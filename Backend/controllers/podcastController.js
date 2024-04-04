@@ -31,13 +31,18 @@ const getPodcastById = async (req, res) => {
 
 const createPodcast = async (req, res) => {
     try {
-        const newPodcast = new Podcast({
-            title: req.body.title,
-            description: req.body.description,
-            author: req.body.author,
-            coverImageUrl: req.body.coverImageUrl
-        })
+        const {title, description} = req.body
+        const {podcastFile, coverPhoto} = req.files
+        
+        console.log('Title:', title)
+        console.log('Description:', description)
+        console.log('Podcast File:', podcastFile)
+        console.log('Cover Photo:', coverPhoto)
 
+        const newPodcast = new Podcast({title, description, 
+            podcastFile: podcastFile[0].path, 
+            coverPhoto: coverPhoto[0].path, 
+        })
         await newPodcast.save();
         return res.status(201).json({message: "Podcast created successfully"});
     } catch (error) {

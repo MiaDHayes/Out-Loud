@@ -1,10 +1,13 @@
 import { useContext } from 'react';
-
+import Nav from './Nav';
+import PodcastList from './PodcastList';
 
 function Home() {
 
     return (
         <div className= 'home'>
+            <Nav />
+            <PodcastList />
             <div className= 'title'>
                 <h1>Out Loud</h1>
             </div>

@@ -1,7 +1,8 @@
+import Nav from "./Nav"
 
 
 function Header() {
-    <h5>This is the header</h5>
+    <Nav />
 }
 
 export default Header
