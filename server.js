@@ -35,9 +35,9 @@ createUploadsDirectories()
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       if (file.fieldname === 'podcastFile') {
-        cb(null, 'uploads/podcastFiles/') // Specify the destination folder for podcast files
+        cb(null, 'uploads/podcastFiles/')
       } else if (file.fieldname === 'coverPhoto') {
-        cb(null, 'uploads/coverPhotos/') // Specify the destination folder for cover photos
+        cb(null, 'uploads/coverPhotos/')
       } else {
         cb(new Error('Invalid file fieldname'))
       }
@@ -49,10 +49,11 @@ const storage = multer.diskStorage({
   
   const upload = multer({ storage: storage })
   
-
+app.use('/uploads', express.static('uploads'))
 //Middleware
 app.use(cors())
 app.use(bodyParser.json())
+
 
 //Routes for User
 console.log("Route for /users registered")

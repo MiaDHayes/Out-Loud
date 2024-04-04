@@ -40,8 +40,8 @@ const createPodcast = async (req, res) => {
         console.log('Cover Photo:', coverPhoto)
 
         const newPodcast = new Podcast({title, description, 
-            podcastFile: podcastFile[0].path, 
-            coverPhoto: coverPhoto[0].path, 
+            podcastFile: path.basename(podcastFile[0].path), 
+            coverPhoto: path.basename(coverPhoto[0].path), 
         })
         await newPodcast.save();
         return res.status(201).json({message: "Podcast created successfully"});
