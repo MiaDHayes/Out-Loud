@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react'
+import axios from 'axios';
 import PodcastDetail from '../helpers/PodcastDetails';
 import { Link } from 'react-router-dom'
 
@@ -24,7 +25,7 @@ const PodcastForm = () => {
     } catch (error) {
       console.error('Error accessing media devices:', error)
     }
-  };
+  }
 
   const stopRecording = () => {
     if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
@@ -32,13 +33,29 @@ const PodcastForm = () => {
       setRecording(false)
       mediaStreamRef.current.getTracks().forEach(track => track.stop());
     }
-  };
+  }
 
   const handleDataAvailable = (event) => {
     if (event.data.size > 0) {
       setRecordedChunks(prev => [...prev, event.data])
     }
-  };
+  }
+
+  const uploadAudio = async () => {
+    try {
+      const blob = new Blob(recordedChunks, { type: 'audio/webm' });
+      const formData = new FormData();
+      formData.append('audioFile', blob);
+
+      await axios.post('http://localhost:3005/upload-audio', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+
+      console.log('Audio uploaded successfully');
+    } catch (error) {
+      console.error('Error uploading audio:', error);
+    }
+  }
 
   const handlePlayback = () => {
     if (recordedChunks.length === 0) return
@@ -46,7 +63,8 @@ const PodcastForm = () => {
     const blob = new Blob(recordedChunks, { type: 'audio/webm' })
     const url = URL.createObjectURL(blob)
     setRecordedURL(url)
-  };
+  }
+
 
   return (
     <div>
@@ -74,4 +92,3 @@ const PodcastForm = () => {
 }
 
 export default PodcastForm
-
