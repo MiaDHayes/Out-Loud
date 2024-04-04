@@ -3,10 +3,10 @@ const  { Schema } = require('mongoose')
 
 const Podcast = new Schema(
     {
-        title: {type: String, required: true},
-        description: {type: String, required: true},
-        author: {type: String, required: false},
-        coverImageUrl: {type: String, required: false},
+        title: {type: String},
+        description: {type: String},
+        podcastFile: {type: String},
+        coverPhoto: {type: String},
         episode: [{type: Schema.Types.ObjectId, ref: 'Episode'}]
     },
     { timestamps: true }

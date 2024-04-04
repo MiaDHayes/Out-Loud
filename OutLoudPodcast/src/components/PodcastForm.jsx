@@ -49,7 +49,7 @@ const PodcastForm = () => {
 
       await axios.post('http://localhost:3005/upload-audio', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
-      });
+      })
 
       console.log('Audio uploaded successfully');
     } catch (error) {
@@ -65,6 +65,16 @@ const PodcastForm = () => {
     setRecordedURL(url)
   }
 
+  const handleDownload = () => {
+    const blob = new Blob(recordedChunks, { type: 'audio/webm' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'recorded_audio.webm';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
 
   return (
     <div>
@@ -78,7 +88,10 @@ const PodcastForm = () => {
           <button onClick={stopRecording}>Stop Recording</button>
         )}
         {recordedChunks.length > 0 && (
-          <button onClick={handlePlayback}>Playback Recorded</button>
+          <>
+            <button onClick={handlePlayback}>Playback Recorded</button>
+            <button onClick={handleDownload}>Download Audio</button>
+          </>
         )}
       </div>
       {recordedURL && (
