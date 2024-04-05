@@ -20,14 +20,19 @@ function PodcastList() {
       <ul>
         {podcasts.map(podcast => (
           <li key={podcast._id}>
-            <h3>{podcast.title}</h3>
-            <p>{podcast.description}</p>
             <img
               src={`/uploads/coverPhotos/${podcast.coverPhoto}`}
               alt='Cover'
               onLoad={() => console.log('Image loaded:', `/coverPhoto/${podcast.coverPhoto}`)}
               onError={() => console.error('Image not loaded:', `/coverPhoto/${podcast.coverPhoto}`)}
             />
+            <h3>{podcast.title}</h3>
+            <p>{podcast.description}</p>
+  //The source needs to be changed to uploads/podcastFile
+            <audio controls>
+              <source src={podcast.audioClip} type='audio/mpeg' />
+              Your browser does not support the audio element
+            </audio>
           </li>
         ))}
       </ul>
