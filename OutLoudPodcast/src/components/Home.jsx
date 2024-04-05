@@ -7,7 +7,7 @@ function Home() {
     return (
         <div className= 'home'>
             <Nav />
-            <PodcastList />
+            {/* <PodcastList /> */}
             <div className= 'title'>
                 <h1>Out Loud</h1>
             </div>
