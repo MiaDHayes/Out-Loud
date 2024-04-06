@@ -38,6 +38,72 @@ a.allLink {
   color: white;
 }
 
+div.detail-container-details {
+  color: aliceblue;
+}
+
+label {
+  color: white;
+  font-family: 'Lexend';
+}
+
+div.detail-container-details h1 {
+  font-family: 'Lexend';
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  color: white;
+  font-size: 25px;
+}
+
+input#podcastFile {
+  font-family: 'Lexend';
+}
+
+button.submit-button {
+  background-color: orange;
+  color: #023047;
+  font-family: 'Lexend';
+}
+
+.bridgerton h3 {
+  font-family: 'Lemon';
+}
+
+.bridgerton p {
+  font-family: 'Lexend';
+}
+
+.bridgerton img {
+  border-color: #8ECAE6;
+}
+
+input, textarea {
+  background-color: transparent;
+  border-color: #8ECAE6;
+}
+
+.podcast-item {
+  border: 1px solid #ccc; /* Add border style */
+  padding: 10px; /* Add padding for better spacing */
+  margin-bottom: 10px; /* Add margin bottom for separation between items */
+}
+
+li.podcast-item::marker {
+  color: #023047;
+}
+
+.single-title {
+  font-family: 'Lexend';
+  font-size: 25px;
+}
+
+.single-description {
+  font-family: 'Lexend';
+}
+
 /* .topLevelLink a {
   font-family: 'Lexend';
   color: white;

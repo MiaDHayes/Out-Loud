@@ -46,7 +46,8 @@ function PodcastDetails({ onSubmit }) {
 
     return (
         <form onSubmit={handleSubmit} className="detail-container">
-            <div>
+            <div className= "detail-container-details">
+                <h1>Create Podcast</h1>
                 <label htmlFor="title">Title:</label>
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
                 <label htmlFor="description">Description:</label>
@@ -55,12 +56,12 @@ function PodcastDetails({ onSubmit }) {
             <div>
                 <label htmlFor="podcastFile">
                     Podcast File:
-                    <input type="file" id="podcastFile" accept=".mp3, .wav, .ogg" onChange={handlePodcastFileChange} required />
+                    <input type="file" id="podcastFile" accept=".mp3, .wav, .ogg, .webm" onChange={handlePodcastFileChange} required />
                 </label>
                 <label htmlFor="coverPhoto">Cover Photo:</label>
                 <input type="file" id="coverPhoto" accept="image/*" onChange={handleCoverPhotoChange} required />
             </div>
-            <button type="submit">Submit</button>
+            <button className= 'submit-button' type="submit">Submit</button>
         </form>
     )
 }
