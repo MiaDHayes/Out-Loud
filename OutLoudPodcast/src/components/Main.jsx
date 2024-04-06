@@ -5,6 +5,7 @@ import SinglePodcastDetail from './SinglePodcastDetail'
 import PodcastList from './PodcastList'
 import PodcastDetails from '../helpers/PodcastDetails'
 import Login from './Login'
+import CreateAccount from './CreateAccount'
 
 function Main() {
     return (
@@ -16,6 +17,7 @@ function Main() {
                 <Route exact path= '/all-podcasts' element= {<PodcastList />} />
                 <Route exact path= '/podcast/:id' element= {<SinglePodcastDetail />} /> 
                 <Route exact path= '/login' element= {<Login />} />
+                <Route exact path= '/create-account' element= {<CreateAccount />} />
             </Routes>
         </main>
     )

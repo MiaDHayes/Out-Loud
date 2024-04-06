@@ -1,19 +1,24 @@
-const { useState } = require("react");
+import { useState } from "react"
+import { useNavigate, Link } from "react-router-dom"
+import axios from "axios"
 
 
 function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
+    let navigate = useNavigate()
+
 
     const handleSubmit = async (event) => {
-        event.prevenetDefault()
+        event.preventDefault()
         
         try {
-            const response = await axios.post('http://localhost:3005/user', {
+            const response = await axios.get('http://localhost:3005/users', {
                 username, password
             })
             console.log('Login successful:', response.data)
+            navigate('/')
         } catch (error) {
             console.error('Login error', error)
             setError('Invalid username or password. Please try again')
@@ -48,6 +53,9 @@ function Login() {
             </div>
             <button type="submit">Login</button>
           </form>
+          <p>No Account? <Link to='/create-account'>Create an Account</Link></p>
         </div>
       )
 }
+
+export default Login
