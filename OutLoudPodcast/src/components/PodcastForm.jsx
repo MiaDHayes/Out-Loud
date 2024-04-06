@@ -82,6 +82,7 @@ const PodcastForm = () => {
         <audio ref={audioRef} controls />
       </div>
       <div>
+      <Link to= '/all-podcasts'>All Podcasts</Link>
         {!recording ? (
           <button onClick={startRecording}>Start Recording</button>
         ) : (
@@ -91,13 +92,13 @@ const PodcastForm = () => {
           <>
             <button onClick={handlePlayback}>Playback Recorded</button>
             <button onClick={handleDownload}>Download Audio</button>
+            <Link to= '/podcast-details'>Podcast Details</Link>
           </>
         )}
       </div>
       {recordedURL && (
         <div>
           <audio src={recordedURL} controls />
-          <Link to= '/podcast-details'>Podcast Details</Link>
         </div>
       )}
     </div>
