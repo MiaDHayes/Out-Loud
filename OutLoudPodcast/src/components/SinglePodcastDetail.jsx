@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import ReactPlayer from 'react-player'
+
 
 function SinglePodcastDetail() {
   const [podcast, setPodcast] = useState(null);
@@ -38,7 +40,7 @@ function SinglePodcastDetail() {
   return (
     <div className='single-details-container'>
         <div className='image-cover'>
-            <img src={`/uploads/coverPhotos/${podcast.coverPhoto}`} alt='Cover' />
+            <img src={`http://localhost:3005/${podcast.coverPhoto}`} alt='Cover' />
         </div>
         <div className='single-title'>
             <h2>{podcast.title}</h2>
@@ -46,10 +48,16 @@ function SinglePodcastDetail() {
         <div className='single-description'>
             <p>{podcast.description}</p>
         </div>
-      <audio controls>
-        <source src={`/uploads/podcastFiles/${podcast.podcastFile}`} type='audio/mp3' />
-        Your browser does not support the audio element.
-      </audio>
+        <div className='single-audio'>
+            <ReactPlayer 
+                url={`http://localhost:3005/${podcast.podcastFile}`}
+                controls= {true}
+                playing= {false}
+                width= "50%"
+                height= "50px"
+                onError={(error) => console.error('Error playing podcast:', error)}
+            />
+        </div>
     </div>
   );
 }

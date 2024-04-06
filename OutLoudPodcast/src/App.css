@@ -24,7 +24,7 @@ a.createLink {
   position: absolute;
   top: 0;
   right: 0;
-  width: 70%;
+  width: 50%;
   color: white;
 }
 
@@ -34,7 +34,7 @@ a.allLink {
   position: absolute;
   top: 0;
   left: 0;
-  width: 70%;
+  width: 50%;
   color: white;
 }
 
@@ -86,9 +86,30 @@ input, textarea {
 }
 
 .podcast-item {
-  border: 1px solid #ccc; /* Add border style */
-  padding: 10px; /* Add padding for better spacing */
-  margin-bottom: 10px; /* Add margin bottom for separation between items */
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #8ECAE6;
+}
+
+.podcast-item h3, p{
+  color: #8ECAE6;
+}
+
+.podcast-item img {
+  border: 1px solid #8ECAE6;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+div.image-cover {
+  width: 200px;
+  height: auto;
+}
+
+.podcast-item h3:hover {
+  color: orange;
 }
 
 li.podcast-item::marker {
@@ -102,6 +123,7 @@ li.podcast-item::marker {
 
 .single-description {
   font-family: 'Lexend';
+
 }
 
 /* .topLevelLink a {
@@ -117,12 +139,12 @@ li.podcast-item::marker {
   margin-right: 10px;
 } */
 
-a.allLink :hover {
+a.allLink:hover {
   color: orange;
   text-decoration: underline;
 }
 
-a.createLink :hover {
+a.createLink:hover {
   color: orange;
   text-decoration: underline;
 }
@@ -130,6 +152,9 @@ a.createLink :hover {
 .home-caption h5 {
   font-family: 'Lemon';
   text-align: center;
+  color: #00000057;
+  font-size: 17px;
+  margin-top: 45%;
 }
 
 .button-flex {
@@ -138,33 +163,7 @@ a.createLink :hover {
   align-items: center;
   gap: 10px;
 }
-.audio-controls,
-.video-controls {
-    margin-bottom: 20px;
-}
-.audio-player,
-.video-player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.audio-player,
-.video-player,
-.recorded-player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.live-player {
-    height: 200px;
-    width: 400px;
-    border: 1px solid #646cff;
-    margin-bottom: 30px;
-}
-.recorded-player video {
-    height: 400px;
-    width: 800px;
-}
+
 
 
 

@@ -34,10 +34,10 @@ function PodcastList() {
             <li key={podcast._id} className='podcast-item'>
               <Link to= {`/podcast/${podcast._id}`}>
                 <img
-                  src={`/uploads/coverPhotos/${podcast.coverPhoto}`}
+                  src={`http://localhost:3005/${podcast.coverPhoto}`}
                   alt='Cover'
-                  onLoad={() => console.log('Image loaded:', `/coverPhoto/${podcast.coverPhoto}`)}
-                  onError={() => console.error('Image not loaded:', `/coverPhoto/${podcast.coverPhoto}`)}
+                  onLoad={() => console.log('Image loaded:', `/uploads/coverPhotos/${podcast.coverPhoto}`)}
+                  onError={(e) => console.error('Image not loaded:', e.target.src)}
                 />
                 <h3>{podcast.title}</h3>
                 <p>{podcast.description}</p>
