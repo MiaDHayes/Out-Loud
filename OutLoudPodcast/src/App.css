@@ -24,7 +24,7 @@ a.createLink {
   position: absolute;
   top: 0;
   right: 0;
-  width: 70%;
+  width: 50%;
   color: white;
 }
 
@@ -34,8 +34,111 @@ a.allLink {
   position: absolute;
   top: 0;
   left: 0;
-  width: 70%;
+  width: 50%;
   color: white;
+}
+
+div.detail-container-details {
+  color: aliceblue;
+}
+
+label {
+  color: white;
+  font-family: 'Lexend';
+}
+
+div.detail-container-details h1 {
+  font-family: 'Lexend';
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  color: white;
+  font-size: 25px;
+}
+
+input#podcastFile {
+  font-family: 'Lexend';
+}
+
+button.submit-button {
+  background-color: orange;
+  color: #023047;
+  font-family: 'Lexend';
+}
+
+.bridgerton h3 {
+  font-family: 'Lemon';
+}
+
+.bridgerton p {
+  font-family: 'Lexend';
+}
+
+.bridgerton img {
+  border-color: #8ECAE6;
+}
+
+input, textarea {
+  background-color: transparent;
+  border-color: #8ECAE6;
+}
+
+.podcast-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #8ECAE6;
+}
+
+.podcast-item h3, p{
+  color: #8ECAE6;
+}
+
+.podcast-item img {
+  /* border: 1px solid #8ECAE6; */
+  border-radius: 15px;
+  /* padding: 10px; */
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+}
+
+div.image-cover {
+  border-color: #8ECAE6;
+}
+
+img.image-stuff {
+  width: 100%;
+  height: auto;
+  border-radius: 50px;
+}
+
+.podcast-item h3:hover {
+  color: orange;
+}
+
+li.podcast-item::marker {
+  color: #023047;
+}
+
+.single-title {
+  font-family: 'Lexend';
+  font-size: 25px;
+}
+
+.single-description {
+  font-family: 'Lexend';
+}
+
+.react-player {
+  width: 100%;
+  height: auto;
+}
+
+.react-player__play-icon {
+  color: orange;
 }
 
 /* .topLevelLink a {
@@ -51,12 +154,12 @@ a.allLink {
   margin-right: 10px;
 } */
 
-a.allLink :hover {
+a.allLink:hover {
   color: orange;
   text-decoration: underline;
 }
 
-a.createLink :hover {
+a.createLink:hover {
   color: orange;
   text-decoration: underline;
 }
@@ -64,6 +167,9 @@ a.createLink :hover {
 .home-caption h5 {
   font-family: 'Lemon';
   text-align: center;
+  color: #00000057;
+  font-size: 17px;
+  margin-top: 45%;
 }
 
 .button-flex {
@@ -72,33 +178,7 @@ a.createLink :hover {
   align-items: center;
   gap: 10px;
 }
-.audio-controls,
-.video-controls {
-    margin-bottom: 20px;
-}
-.audio-player,
-.video-player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.audio-player,
-.video-player,
-.recorded-player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.live-player {
-    height: 200px;
-    width: 400px;
-    border: 1px solid #646cff;
-    margin-bottom: 30px;
-}
-.recorded-player video {
-    height: 400px;
-    width: 800px;
-}
+
 
 
 
