@@ -97,15 +97,22 @@ input, textarea {
 }
 
 .podcast-item img {
-  border: 1px solid #8ECAE6;
+  /* border: 1px solid #8ECAE6; */
   border-radius: 15px;
-  padding: 10px;
-  margin-bottom: 10px;
+  /* padding: 10px; */
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
 }
 
 div.image-cover {
-  width: 200px;
+  border-color: #8ECAE6;
+}
+
+img.image-stuff {
+  width: 100%;
   height: auto;
+  border-radius: 50px;
 }
 
 .podcast-item h3:hover {
@@ -123,7 +130,15 @@ li.podcast-item::marker {
 
 .single-description {
   font-family: 'Lexend';
+}
 
+.react-player {
+  width: 100%;
+  height: auto;
+}
+
+.react-player__play-icon {
+  color: orange;
 }
 
 /* .topLevelLink a {

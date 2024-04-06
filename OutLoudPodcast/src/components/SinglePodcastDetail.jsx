@@ -40,7 +40,7 @@ function SinglePodcastDetail() {
   return (
     <div className='single-details-container'>
         <div className='image-cover'>
-            <img src={`http://localhost:3005/${podcast.coverPhoto}`} alt='Cover' />
+            <img src={`http://localhost:3005/${podcast.coverPhoto}`} className='image-stuff' alt='Cover' />
         </div>
         <div className='single-title'>
             <h2>{podcast.title}</h2>
@@ -48,11 +48,12 @@ function SinglePodcastDetail() {
         <div className='single-description'>
             <p>{podcast.description}</p>
         </div>
-        <div className='single-audio'>
+        <div className='single-audio' style={{display: 'flex', justifyContent: 'center'}}>
             <ReactPlayer 
                 url={`http://localhost:3005/${podcast.podcastFile}`}
                 controls= {true}
                 playing= {false}
+                light={true}
                 width= "50%"
                 height= "50px"
                 onError={(error) => console.error('Error playing podcast:', error)}
