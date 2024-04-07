@@ -1,20 +1,12 @@
 import { useContext } from 'react';
 import Nav from './Nav';
 import PodcastList from './PodcastList';
-import { Link } from 'react-router-dom';
-import circle1 from '../assets/circle1.png'
-import circle2 from '../assets/circle2.png'
-import circle3 from '../assets/circle3.png'
 
-
-function Home() {
+function OutLoudHome() {
 
     return (
         <div className= 'home'>
-            {/* <Nav /> */}
-            {/* <PodcastList /> */}
-            <Link to= '/login' className='login'>Login</Link>
-            <Link to= '/create-account' className='create-acc'>Create Account</Link>
+            <Nav />
             <div className='logo'>
                 <div className="circle blue"></div>
                 <div className="circle orange"></div>
@@ -22,6 +14,7 @@ function Home() {
                 <div className="circle darkbluee"></div>
                 <div className="circle darkblueee"></div>
             </div>
+            {/* <PodcastList /> */}
             <div className= 'title'>
                 <h1>Out Loud</h1>
             </div>
@@ -33,4 +26,4 @@ function Home() {
     
 }
 
-export default Home
+export default OutLoudHome

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react'
 
 function CreateAccount() {
   const [username, setUsername] = useState('');
@@ -7,6 +8,7 @@ function CreateAccount() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,6 +27,7 @@ function CreateAccount() {
       });
 
       console.log('Account created successfully:', response.data);
+      navigate('/login')
       // Optionally, you can redirect the user to the login page after account creation
     //   window.location.href = '/login';
     } catch (error) {
@@ -78,7 +81,7 @@ function CreateAccount() {
             required
           />
         </div>
-        <button type="submit">Create Account</button>
+        <button type="submit" className='create-button'>Create Account</button>
       </form>
     </div>
   );
