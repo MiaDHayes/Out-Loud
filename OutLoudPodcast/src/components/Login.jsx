@@ -18,7 +18,7 @@ function Login() {
                 username, password
             })
             console.log('Login successful:', response.data)
-            navigate('/')
+            navigate('/home')
         } catch (error) {
             console.error('Login error', error)
             setError('Invalid username or password. Please try again')

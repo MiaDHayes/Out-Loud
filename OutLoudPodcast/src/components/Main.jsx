@@ -6,12 +6,14 @@ import PodcastList from './PodcastList'
 import PodcastDetails from '../helpers/PodcastDetails'
 import Login from './Login'
 import CreateAccount from './CreateAccount'
+import OutLoudHome from './OutLoudHome'
 
 function Main() {
     return (
         <main>
             <Routes>
                 <Route exact path= '/' element= {<Home />} />
+                <Route exact path= '/home' element= {<OutLoudHome />} />
                 <Route exact path= '/create-podcast' element= {<PodcastForm />} />
                 <Route exact path='/podcast-details' element= {<PodcastDetails />} />
                 <Route exact path= '/all-podcasts' element= {<PodcastList />} />
