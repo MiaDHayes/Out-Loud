@@ -2,11 +2,13 @@ import { useState } from "react"
 import axios from 'axios'
 
 
+
 function CreatePodcastDetails({ onSubmit }) {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const[podcastFile, setPodcastFile] = useState(null)
     const [coverPhoto, setCoverPhoto] = useState(null)
+
 
     const handleSubmit = async (event) => {
         event.preventDefault()

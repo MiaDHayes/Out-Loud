@@ -26,19 +26,19 @@ function SinglePodcastDetail() {
       }
     }
 
-    const fetchUsername = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3005/users/${username}`)
-        // setPodcast(prevPodcast => ({...prevPodcast, username: response.data.username}))
-        setLoading(false)
-      } catch (error) {
-        setError(error)
-        setLoading(false)
-      }
-    }
+    // const fetchUsername = async () => {
+    //   try {
+    //     const response = await axios.get(`http://localhost:3005/users/${username}`)
+    //     // setPodcast(prevPodcast => ({...prevPodcast, username: response.data.username}))
+    //     setLoading(false)
+    //   } catch (error) {
+    //     setError(error)
+    //     setLoading(false)
+    //   }
+    // }
 
     fetchPodcast()
-    fetchUsername()
+    // fetchUsername()
   }, [id])
 
   if (loading) {
@@ -53,7 +53,6 @@ function SinglePodcastDetail() {
     return <div>Podcast not found</div>
   }
 
-console.log('Username:', username)
 
   return (
     <div className='single-details-container'>
@@ -61,7 +60,7 @@ console.log('Username:', username)
         <img src={`http://localhost:3005/${podcast.coverPhoto}`} className='image-stuff' alt='Cover' />
       </div>
       <div className='single-title'>
-        <h5>{podcast.username}</h5>
+        {/* <h5>{podcast.username}</h5> */}
         <h2>{podcast.title}</h2>
       </div>
       <div className='single-description'>
