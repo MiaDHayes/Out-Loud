@@ -7,7 +7,7 @@ import CreatePodcastDetails from '../helpers/CreatePodcastDetails'
 import Login from './Login'
 import CreateAccount from './CreateAccount'
 import OutLoudHome from './OutLoudHome'
-import User from './User'
+import UserProfile from './UserProfile'
 
 function Main() {
     return (
@@ -21,8 +21,8 @@ function Main() {
                 <Route exact path= '/podcast/:id' element= {<SinglePodcastDetail />} /> 
                 <Route exact path= '/login' element= {<Login />} />
                 <Route exact path= '/create-account' element= {<CreateAccount />} />
-                <Route exact path= '/profile' element= {<User />} />
-                <Route exact path= '/profile/:id' element= {<User />} />
+                <Route exact path= '/profile' element= {<UserProfile />} />
+                <Route exact path= '/profile/:id' element= {<UserProfile />} />
             </Routes>
         </main>
     )

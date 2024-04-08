@@ -3,53 +3,57 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
-import User from './User'
+import UserProfile from './UserProfile'
 
 function SinglePodcastDetail() {
-  const [podcast, setPodcast] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const { id, username } = useParams();
+  const [podcast, setPodcast] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const { id } = useParams()
   const navigate = useNavigate()
+  const username = podcast ? podcast.username[0] : ''
+
 
   useEffect(() => {
     const fetchPodcast = async () => {
       try {
-        const response = await axios.get(`http://localhost:3005/podcast/${id}`);
-        setPodcast(response.data);
-        setLoading(false);
+        const response = await axios.get(`http://localhost:3005/podcast/${id}`)
+        setPodcast(response.data)
+        setLoading(false)
       } catch (error) {
-        setError(error);
-        setLoading(false);
+        setError(error)
+        setLoading(false)
       }
-    };
+    }
 
     const fetchUsername = async () => {
       try {
-        const response = await axios.get(`http://localhost:3005/users/${username}`);
-        setPodcast(prevPodcast => ({...prevPodcast, username: response.data.username}));
-        setLoading(false);
+        const response = await axios.get(`http://localhost:3005/users/${username}`)
+        // setPodcast(prevPodcast => ({...prevPodcast, username: response.data.username}))
+        setLoading(false)
       } catch (error) {
-        setError(error);
-        setLoading(false);
+        setError(error)
+        setLoading(false)
       }
-    };
+    }
 
-    fetchPodcast();
-    fetchUsername();
-  }, [id, username]);
+    fetchPodcast()
+    fetchUsername()
+  }, [id])
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: {error.message}</div>
   }
 
   if (!podcast) {
-    return <div>Podcast not found</div>;
+    return <div>Podcast not found</div>
   }
+
+console.log('Username:', username)
 
   return (
     <div className='single-details-container'>
@@ -57,7 +61,7 @@ function SinglePodcastDetail() {
         <img src={`http://localhost:3005/${podcast.coverPhoto}`} className='image-stuff' alt='Cover' />
       </div>
       <div className='single-title'>
-        {/* <User username={podcast.username} /> */}
+        <h5>{podcast.username}</h5>
         <h2>{podcast.title}</h2>
       </div>
       <div className='single-description'>
