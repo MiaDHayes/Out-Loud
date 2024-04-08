@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 function PodcastList() {
   const [podcasts, setPodcasts] = useState([])
   const [error, setError] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     
@@ -39,6 +41,7 @@ function PodcastList() {
                   onLoad={() => console.log('Image loaded:', `/uploads/coverPhotos/${podcast.coverPhoto}`)}
                   onError={(e) => console.error('Image not loaded:', e.target.src)}
                 />
+                <h6>{podcast.username}</h6>
                 <h3>{podcast.title}</h3>
                 <p>{podcast.description}</p>
                 {/* <ReactPlayer 
@@ -54,6 +57,7 @@ function PodcastList() {
           )
           })}
       </ul>
+      <button id='back' onClick={() => navigate('/home')}>Go Back</button>
     </div>
   )
 }

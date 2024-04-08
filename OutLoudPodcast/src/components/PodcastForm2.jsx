@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import axios from 'axios';
-import PodcastDetail from '../helpers/PodcastDetails';
+import CreatePodcastDetails from '../helpers/CreatePodcastDetails';
 import { Link } from 'react-router-dom'
 
 const PodcastForm = () => {
@@ -90,9 +90,10 @@ const PodcastForm = () => {
         )}
         {recordedChunks.length > 0 && (
           <>
+            <Link to= '/podcast-details'>Continue</Link>
             <button onClick={handlePlayback}>Playback Recorded</button>
             <button onClick={handleDownload}>Download Audio</button>
-            <Link to= '/podcast-details'>Podcast Details</Link>
+            
           </>
         )}
       </div>

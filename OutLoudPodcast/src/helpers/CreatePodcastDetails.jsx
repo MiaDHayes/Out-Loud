@@ -2,7 +2,7 @@ import { useState } from "react"
 import axios from 'axios'
 
 
-function PodcastDetails({ onSubmit }) {
+function CreatePodcastDetails({ onSubmit }) {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const[podcastFile, setPodcastFile] = useState(null)
@@ -46,6 +46,7 @@ function PodcastDetails({ onSubmit }) {
 
     return (
         <form onSubmit={handleSubmit} className="detail-container">
+            <button id='back' onClick={() => navigate('/all-podcasts')}>Continue</button>
             <div className= "detail-container-details">
                 <h1>Create Podcast</h1>
                 <label htmlFor="title">Title:</label>
@@ -62,9 +63,10 @@ function PodcastDetails({ onSubmit }) {
                 <input type="file" id="coverPhoto" accept="image/*" onChange={handleCoverPhotoChange} required />
             </div>
             <button className= 'submit-button' type="submit">Submit</button>
+
         </form>
     )
 }
 
 
-export default PodcastDetails
+export default CreatePodcastDetails
