@@ -78,22 +78,21 @@ const PodcastForm = () => {
 
   return (
     <div>
+      <Link to= '/all-podcasts' className='all-link-button'>All Podcasts</Link>
       <div>
         <audio ref={audioRef} controls />
       </div>
       <div>
-      <Link to= '/all-podcasts'>All Podcasts</Link>
         {!recording ? (
-          <button onClick={startRecording}>Start Recording</button>
+          <button onClick={startRecording} className='recording-btn'>Start Recording</button>
         ) : (
-          <button onClick={stopRecording}>Stop Recording</button>
+          <button onClick={stopRecording} className='stop-btn'>Stop Recording</button>
         )}
         {recordedChunks.length > 0 && (
           <>
-            <Link to= '/podcast-details'>Continue</Link>
-            <button onClick={handlePlayback}>Playback Recorded</button>
-            <button onClick={handleDownload}>Download Audio</button>
-            
+            <button onClick={handlePlayback} className='playback-btn'>Playback Recorded</button>
+            <button onClick={handleDownload} className='download-btn'>Download Audio</button>
+            <Link to= '/podcast-details' className='details-continue'>Continue</Link>
           </>
         )}
       </div>
