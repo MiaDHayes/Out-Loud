@@ -10,6 +10,8 @@ import OutLoudHome from './OutLoudHome'
 import UserProfile from './UserProfile'
 
 function Main() {
+    const isLoggedIn = true
+    
     return (
         <main>
             <Routes>

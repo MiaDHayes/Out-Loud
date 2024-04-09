@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 const db = require('./Backend/db/index')
 const multer = require('multer');
 const fs = require('fs')
+const path = require('path')
+const checkUserLogIn = require('./Backend/middleware/checkUserLogIn')
 // const Podcast = require('./Backend/models/podcast')
 const audioFileController = require('./Backend/controllers/audioFileController')
 const podcastController = require('./Backend/controllers/podcastController')
@@ -35,9 +37,9 @@ createUploadsDirectories()
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       if (file.fieldname === 'podcastFile') {
-        cb(null, 'uploads/podcastFiles/') // Specify the destination folder for podcast files
+        cb(null, 'uploads/podcastFiles/')
       } else if (file.fieldname === 'coverPhoto') {
-        cb(null, 'uploads/coverPhotos/') // Specify the destination folder for cover photos
+        cb(null, 'uploads/coverPhotos/')
       } else {
         cb(new Error('Invalid file fieldname'))
       }
@@ -50,9 +52,23 @@ const storage = multer.diskStorage({
   const upload = multer({ storage: storage })
   
 
+app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.mp3','webm')) {
+      res.setHeader('Content-Type', 'audio/mpeg');
+    }
+  }
+}));
+
+
+
 //Middleware
 app.use(cors())
 app.use(bodyParser.json())
+
+app.get('/protected-route', checkUserLogIn, (req, res) => {
+  res.json({message: 'This is a protected route'})
+})
 
 //Routes for User
 console.log("Route for /users registered")
@@ -94,7 +110,6 @@ app.get('/podcast/:id', podcastController.getPodcastById)
 app.post('/podcast', upload.fields([
     {name: 'podcastFile', maxCount: 1},
     {name: 'coverPhoto', maxCount: 1},
-    // {name: 'audioFile', maxCount: 4}
 ]), podcastController.createPodcast)
 app.put('/podcast/:id', podcastController.updatePodcast)
 app.delete('/podcast/:id', podcastController.deletePodcast)

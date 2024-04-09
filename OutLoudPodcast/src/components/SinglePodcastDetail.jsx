@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
-import UserProfile from './UserProfile'
+
 
 function SinglePodcastDetail() {
   const [podcast, setPodcast] = useState(null)
@@ -11,7 +11,7 @@ function SinglePodcastDetail() {
   const [error, setError] = useState(null)
   const { id } = useParams()
   const navigate = useNavigate()
-  const username = podcast ? podcast.username[0] : ''
+
 
 
   useEffect(() => {
@@ -26,19 +26,7 @@ function SinglePodcastDetail() {
       }
     }
 
-    // const fetchUsername = async () => {
-    //   try {
-    //     const response = await axios.get(`http://localhost:3005/users/${username}`)
-    //     // setPodcast(prevPodcast => ({...prevPodcast, username: response.data.username}))
-    //     setLoading(false)
-    //   } catch (error) {
-    //     setError(error)
-    //     setLoading(false)
-    //   }
-    // }
-
     fetchPodcast()
-    // fetchUsername()
   }, [id])
 
   if (loading) {
@@ -60,7 +48,6 @@ function SinglePodcastDetail() {
         <img src={`http://localhost:3005/${podcast.coverPhoto}`} className='image-stuff' alt='Cover' />
       </div>
       <div className='single-title'>
-        {/* <h5>{podcast.username}</h5> */}
         <h2>{podcast.title}</h2>
       </div>
       <div className='single-description'>
