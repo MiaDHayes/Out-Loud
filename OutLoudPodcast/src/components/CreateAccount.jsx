@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function CreateAccount() {
   const [username, setUsername] = useState('');
@@ -8,14 +8,14 @@ function CreateAccount() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate
+  const navigate = useNavigate()
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     if (password !== confirmPassword) {
-      setError('Passwords do not match.');
-      return;
+      setError('Passwords do not match.')
+      return
     }
 
     try {
@@ -24,9 +24,9 @@ function CreateAccount() {
         password,
         email,
         confirmPassword
-      });
+      })
 
-      console.log('Account created successfully:', response.data);
+      console.log('Account created successfully:', response.data)
       navigate('/login')
       // Optionally, you can redirect the user to the login page after account creation
     //   window.location.href = '/login';
@@ -34,7 +34,7 @@ function CreateAccount() {
       console.error('Account creation error:', error);
       setError('An error occurred while creating your account. Please try again later.');
     }
-  };
+  }
 
   return (
     <div className="create-account-container">
@@ -47,7 +47,10 @@ function CreateAccount() {
             type="text"
             id="username"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => {
+              setUsername(e.target.value)
+              console.log('Username', e.target.value)
+            }}
             required
           />
         </div>

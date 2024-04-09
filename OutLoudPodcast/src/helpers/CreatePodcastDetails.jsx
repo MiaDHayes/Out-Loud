@@ -1,52 +1,47 @@
-import { useState } from "react"
-import axios from 'axios'
-
+import { useState } from "react";
+import axios from 'axios';
 
 function CreatePodcastDetails({ onSubmit }) {
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
-    const[podcastFile, setPodcastFile] = useState(null)
-    const [coverPhoto, setCoverPhoto] = useState(null)
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [podcastFile, setPodcastFile] = useState(null);
+    const [coverPhoto, setCoverPhoto] = useState(null);
 
     const handleSubmit = async (event) => {
-        event.preventDefault()
+        event.preventDefault();
         try {
-            const formData = new FormData()
-            formData.append('title', title)
-            formData.append('description', description)
-            formData.append('podcastFile', podcastFile)
-            formData.append('coverPhoto', coverPhoto)
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('description', description);
+            formData.append('podcastFile', podcastFile);
+            formData.append('coverPhoto', coverPhoto);
             
-            console.log('Selected file:', podcastFile)
-
             await axios.post('http://localhost:3005/podcast', formData, {
                 headers: {'Content-Type': 'multipart/form-data'}
-            })
-            setTitle('')
-            setDescription('')
-            setPodcastFile(null)
-            setCoverPhoto(null)
+            });
 
-            console.log('Response from server:', error.response.data)
-            onSubmit()
+            // Call the onSubmit function passed as prop to notify the parent component
+            onSubmit();
+
+            // Navigate to '/all-podcasts' route after successful form submission
+            window.location.href = '/all-podcasts';
         } catch (error) {
-            console.error('Error submitting form:', error.response.data)
+            console.error('Error submitting form:', error.response.data);
         }
     }
 
     const handlePodcastFileChange = (event) => {
-        const file = event.target.files[0]
-        setPodcastFile(file)
+        const file = event.target.files[0];
+        setPodcastFile(file);
     }
 
     const handleCoverPhotoChange = (event) => {
-        const file = event.target.files[0]
-        setCoverPhoto(file)
+        const file = event.target.files[0];
+        setCoverPhoto(file);
     }
 
     return (
         <form onSubmit={handleSubmit} className="detail-container">
-            <button id='back' onClick={() => navigate('/all-podcasts')}>Continue</button>
             <div className= "detail-container-details">
                 <h1>Create Podcast</h1>
                 <label htmlFor="title">Title:</label>
@@ -63,10 +58,8 @@ function CreatePodcastDetails({ onSubmit }) {
                 <input type="file" id="coverPhoto" accept="image/*" onChange={handleCoverPhotoChange} required />
             </div>
             <button className= 'submit-button' type="submit">Submit</button>
-
         </form>
     )
 }
 
-
-export default CreatePodcastDetails
+export default CreatePodcastDetails;
