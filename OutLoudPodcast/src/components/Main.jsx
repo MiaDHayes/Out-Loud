@@ -25,6 +25,7 @@ function Main() {
                 <Route exact path= '/create-account' element= {<CreateAccount />} />
                 <Route exact path= '/profile' element= {<UserProfile />} />
                 <Route exact path= '/profile/:id' element= {<UserProfile />} />
+                <Route exact path= '/edit-podcast/:id' element = {<SinglePodcastDetail />} />
             </Routes>
         </main>
     )

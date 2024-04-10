@@ -51,7 +51,7 @@ function Login() {
                 required
               />
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" className="loggin-btn">Login</button>
           </form>
           <p>No Account? <Link to='/create-account'>Create an Account</Link></p>
         </div>

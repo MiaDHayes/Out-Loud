@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 function CreatePodcastDetails({ onSubmit }) {
     const [title, setTitle] = useState('');
@@ -43,6 +44,7 @@ function CreatePodcastDetails({ onSubmit }) {
     return (
         <form onSubmit={handleSubmit} className="detail-container">
             <div className= "detail-container-details">
+            <Link className= 'allLink' to= '/all-podcasts'>All Podcasts</Link>
                 <h1>Create Podcast</h1>
                 <label htmlFor="title">Title:</label>
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
