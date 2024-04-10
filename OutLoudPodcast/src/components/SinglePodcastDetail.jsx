@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useParams, Link } from 'react-router-dom'
 import ReactPlayer from 'react-player'
 import { useNavigate } from 'react-router-dom'
+import FavoriteReact from './FavoriteReact'
 
 function SinglePodcastDetail() {
   const [podcast, setPodcast] = useState(null)
@@ -93,6 +94,7 @@ function SinglePodcastDetail() {
       <div className='button-container'>
         <button className='edit-btn' onClick={handleEdit}>Edit</button>
         <button className='delete-btn' onClick={handleDelete}>Delete</button>
+        <FavoriteReact />
         <Link to='/all-podcasts' className='back-link'>Go Back</Link>
       </div>
     </div>
