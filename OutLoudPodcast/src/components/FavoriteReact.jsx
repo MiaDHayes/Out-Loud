@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 
-function FavoriteReact() {
+function FavoriteReact({podcastId}) {
     const [isFavorite, setIsFavorite] = useState(false)
+    
     
     const toggleFavorite = () => {
         setIsFavorite(!isFavorite)
