@@ -88,9 +88,9 @@ a.createLink {
   font-family: 'Lexend';
   padding-right: 20%;
   padding-top: 5%;
-  position: fixed;
   top: 0;
   right: 0;
+  color: white;
 }
 
 .create-account-container h2 {
@@ -104,9 +104,9 @@ a.allLink {
   font-family: 'Lexend';
   padding-left: 20%;
   padding-top: 5%;
-  position: fixed;
   top: 0;
   left: 0;
+  color: white;
 }
 
 /* div.detail-container-details {
@@ -162,9 +162,20 @@ input#username, input#email, input#password, input#confirm-password {
   left: 0;
 }
 
+.loggin-btn {
+  background-color: orange;
+  color: #023047;
+  font-family: 'Lexend';
+  margin-top: 16%;
+}
+
+.loggin-btn:hover {
+  background-color: #8ECAE6;
+}
+
 .create-acc {
   font-family: 'Lexend';
-  padding-right: 20%;
+  margin-left: 40%;
   padding-top: 5%;
   position: fixed;
   top: 0;
@@ -173,6 +184,8 @@ input#username, input#email, input#password, input#confirm-password {
 
 .home a {
   color: white;
+  top: 0;
+  left: 0;
 }
 
 .home a:hover {
@@ -257,6 +270,48 @@ input, textarea {
   align-self: center;
 }
 
+.back-link {
+  color: white;
+  display: block;
+  margin-top: 23%;
+}
+
+.back-link:hover {
+  color: orange;
+  text-decoration: line-through;
+}
+
+.edit-btn {
+  background-color: transparent;
+  color: orange;
+  font-family: 'Lexend';
+  padding: 0;
+  margin: 15px;
+  align-self: center;
+}
+
+.edit-btn:hover {
+  background-color: transparent;
+  color: #d419f1;
+  text-decoration: wavy;
+}
+
+.delete-btn {
+  background-color: transparent;
+  color: orange;
+  font-family: 'Lexend';
+  padding: 0;
+  margin: 15px;
+  align-self: center;
+  margin-top: 15%;
+}
+
+.delete-btn:hover {
+  background-color: transparent;
+  color: #d419f1;
+  text-decoration: line-through;
+}
+
 .download-btn {
   display: block;
   background-color: #8ECAE6;
@@ -330,6 +385,7 @@ ul {
 .single-description {
   font-family: 'Lexend';
   margin-top: 15%;
+  margin-bottom: 10%;
 }
 
 .react-player {

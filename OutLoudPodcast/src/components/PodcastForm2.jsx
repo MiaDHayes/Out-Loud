@@ -4,12 +4,12 @@ import CreatePodcastDetails from '../helpers/CreatePodcastDetails';
 import { Link } from 'react-router-dom'
 
 const PodcastForm = () => {
-  const [recording, setRecording] = useState(false);
-  const [recordedChunks, setRecordedChunks] = useState([]);
-  const [recordedURL, setRecordedURL] = useState(null);
-  const audioRef = useRef();
-  const mediaRecorderRef = useRef(null);
-  const mediaStreamRef = useRef(null);
+  const [recording, setRecording] = useState(false)
+  const [recordedChunks, setRecordedChunks] = useState([])
+  const [recordedURL, setRecordedURL] = useState(null)
+  const audioRef = useRef()
+  const mediaRecorderRef = useRef(null)
+  const mediaStreamRef = useRef(null)
 
 
   const startRecording = async () => {

@@ -3,6 +3,7 @@ import axios from 'axios';
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import Nav from './Nav'
 
 
 function PodcastList() {
@@ -28,6 +29,7 @@ function PodcastList() {
 
   return (
     <div className= 'bridgerton'>
+      <Nav />
       <h2>Podcasts</h2>
       <ul>
         {podcasts.map(podcast => {

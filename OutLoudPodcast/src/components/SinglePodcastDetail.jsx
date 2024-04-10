@@ -1,35 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useParams, Link } from 'react-router-dom';
-import ReactPlayer from 'react-player';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { useParams, Link } from 'react-router-dom'
+import ReactPlayer from 'react-player'
+import { useNavigate } from 'react-router-dom'
 
 function SinglePodcastDetail() {
-  const [podcast, setPodcast] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const [podcast, setPodcast] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [error, setError] = useState(null)
+  const { id } = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchPodcast = async () => {
       try {
-        const response = await axios.get(`http://localhost:3005/podcast/${id}`);
-        setPodcast(response.data);
-        setLoading(false);
+        const response = await axios.get(`http://localhost:3005/podcast/${id}`)
+        const podcastData = response.data
+        setPodcast(podcastData)
+        setTitle(podcastData.title)
+        setDescription(podcastData.description)
+        setLoading(false)
       } catch (error) {
-        setError(error);
-        setLoading(false);
+        setError(error)
+        setLoading(false)
       }
-    };
+    }
+  
+    fetchPodcast()
+  }, [id])
 
-    fetchPodcast();
-  }, [id]);
 
-  const handleEdit = () => {
-    // Navigate to the edit page, passing the podcast ID as a parameter
-    navigate(`/edit-podcast/${id}`);
-  };
+  const handleEdit = async () => {
+    try {
+      const updatedPodcastData = {
+        title,
+        description
+      }
+      await axios.put(`http://localhost:3005/podcast/${id}`, updatedPodcastData);
+      navigate(`/edit-podcast/${id}`);
+    } catch (error) {
+      console.error('Error editing podcast:', error);
+    }
+  }
 
   const handleDelete = async () => {
     try {
@@ -39,7 +53,8 @@ function SinglePodcastDetail() {
     } catch (error) {
       console.error('Error deleting podcast:', error);
     }
-  };
+  }
+  
 
   if (loading) {
     return <div>Loading...</div>;
