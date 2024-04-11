@@ -50,7 +50,7 @@ function PodcastList() {
         <PodcastSwiper podcasts={featuredPodcasts} title="Featured Podcasts" />
       </div>
       <div className="category-slider">
-        <CategorySwiper categories={categories} title="Categories" />
+        {/* <CategorySwiper categories={categories} title="Categories" /> */}
       </div>
       <ul>
         {podcasts.map(podcast => (
@@ -71,4 +71,3 @@ function PodcastList() {
 }
 
 export default PodcastList;
-

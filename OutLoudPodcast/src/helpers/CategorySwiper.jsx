@@ -25,4 +25,3 @@ function CategorySwiper({ categories, title }) {
 }
 
 export default CategorySwiper
-

@@ -537,6 +537,11 @@ a.create-podcast:hover {
     margin-right: -300px;
   }
   
+  .category li {
+    display: block;
+    font-family: 'Lexend';
+  }
+
   .darkblueee {
     background-color: #023047;
     width: 150px;
