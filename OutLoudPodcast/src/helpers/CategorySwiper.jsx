@@ -8,22 +8,21 @@ function CategorySwiper({ categories, title }) {
     <div className="category-swiper-wrapper">
       <h2>{title}</h2>
       <Swiper
-        spaceBetween={20} // Adjust spacing between slides
-        slidesPerView="auto" // Adjust number of slides based on screen size
-        navigation={true} // Enable navigation arrows
+        spaceBetween={20}
+        slidesPerView="auto"
+        navigation={true}
       >
         {categories.map((category) => (
           <SwiperSlide key={category.name} className="category-item">
             <div className="category-card">
               <h3>{category.name}</h3>
-              {/* You can add additional category details here */}
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
-  );
+  )
 }
 
-export default CategorySwiper;
+export default CategorySwiper
 

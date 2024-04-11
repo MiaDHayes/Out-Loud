@@ -13,9 +13,9 @@ function PodcastSwiper({ podcasts, title }) {
 
       {podcasts && podcasts.length > 0 ? (
         <Swiper
-          spaceBetween={20} // Adjust spacing between slides
-          slidesPerView="auto" // Adjust number of slides based on screen size
-          navigation={true} // Enable navigation arrows
+          spaceBetween={20} //spacing between slides
+          slidesPerView="auto" //number of slides based on screen size
+          navigation={true} //navigation arrows
         >
           {podcasts.map((podcast) => (
             <SwiperSlide key={podcast._id} className="podcast-item">

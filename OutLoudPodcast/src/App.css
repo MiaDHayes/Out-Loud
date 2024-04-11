@@ -231,8 +231,8 @@ button#back {
 .bridgerton h2 {
   font-family: 'Lexend';
   font-size: 32px;
-  color: orange;
-  text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.555);
+  color: white;
+  font-weight: 400;
 }
 
 input, textarea {
@@ -452,7 +452,20 @@ a.createLink:hover {
   text-decoration: line-through;
 }
 
+a.create-podcast {
+  color: orange;
+  font-family: 'Lexend';
+}
 
+a.create-podcast:hover {
+  color: white;
+  text-decoration: line-through;
+}
+
+.browse h2 {
+  text-align: start;
+  font-weight: 200;
+}
 
 /* Media Screen */
 
@@ -466,6 +479,7 @@ a.createLink:hover {
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
+    background-color: #023047;
   }
   
   body {
@@ -499,6 +513,14 @@ a.createLink:hover {
     background-color: orange;
     width: 230px;
     height: 230px;
+  }
+
+  .swiper-button-next::after {
+    color: #466eff;
+  }
+
+  .swiper-button-prev::after {
+    color: #466eff;
   }
   
   .darkblue {
@@ -692,7 +714,7 @@ a.createLink:hover {
     font-family: 'Lexend';
     font-size: 32px;
     color: orange;
-    text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.555);
+    /* text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.555); */
   }
   
   input, textarea {
@@ -709,6 +731,15 @@ a.createLink:hover {
     top: 0;
     right: 0;
     color: white;
+  }
+
+  a.create-podcast {
+    color: white;
+  }
+
+  a.create-podcast:hover {
+    color: orange;
+    text-decoration: line-through;
   }
   
   .recording-btn, .stop-btn {
@@ -900,5 +931,60 @@ a.createLink:hover {
   .fav-btn:checked {
     background-color: #d419f1;
   }
+
+  /* styles.css */
+
+  /* Wrapper for the swiper */
+  .category-swiper-wrapper {
+    margin-top: 20px;
+  }
+
+  /* Slide container */
+ div.swiper-wrapper {
+  max-width: fit-content;
+  transform: translate3d(-200px, 0px, 0px);
+ }
+
+  /* Category card */
+  .category-card {
+    background-color: orange;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    max-width: auto;
+    overflow: hidden;
+    color: #023047;
+  }
+
+  .category-card h3 {
+    font-family: 'Lexend';
+    font-size: 30px;
+  }
+
+  .swiper-horizontal {
+    overflow: hidden;
+  }
+
+  /* Category title */
+  .category-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  /* Category description */
+  .category-card p {
+    font-size: 14px;
+    color: #555;
+  }
+
+  
+
+
+
+
+
+
+
+
 }
 
