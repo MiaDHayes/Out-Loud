@@ -5,38 +5,986 @@
   text-align: center;
 }
 
+body {
+  margin: 0;
+  display: flex;
+  place-items: start;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #023047;
+}
+
+
+
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.circle {
+  border-radius: 50%;
+  position: absolute;
+}
+
+.blue {
+  background-color: #8ECAE6;
+  width: 300px;
+  height: 300px;
+}
+
+.orange {
+  background-color: orange;
+  width: 230px;
+  height: 230px;
+}
+
+.darkblue {
+  background-color: #023047;
+  width: 100px;
+  height: 100px;
+  margin-right: -300px;
+}
+
+.darkbluee {
+  background-color: #023047;
+  width: 100px;
+  height: 100px;
+  margin-right: -300px;
+}
+
+.darkblueee {
+  background-color: #023047;
+  width: 150px;
+  height: 150px;
+  margin-right: -300px;
+}
+
+/* Adjust position for each circle */
+.blue { top: 160px; left: 60px; }
+.orange { top: 190px; left: 96px; }
+.darkblue { top: 130px; left: 250px; }
+.darkbluee { bottom: 500px; right: 380px; }
+.darkblueee { top: 130px; right: 570px; }
+
+.title {
+  position: absolute;
+  top: 30%;
+  left: 94px;
+  /* transform: translate(-50%, -50%); */
+  text-align: center;
+  color: white;
+}
+
+.title h1 {
+  font-family: 'Lemon';
+  font-size: 45px;
+  margin: 0;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+a.createLink {
+  font-family: 'Lexend';
+  padding-right: 20%;
+  padding-top: 5%;
+  top: 0;
+  right: 0;
+  color: white;
+}
+
+.create-account-container h2 {
+  font-family: 'Lemon';
+  top: 0;
+  right: 0;
+  color: orange;
+}
+
+a.allLink {
+  font-family: 'Lexend';
+  padding-left: 20%;
+  padding-top: 5%;
+  top: 0;
+  left: 0;
+  color: white;
+}
+
+
+.myprof {
+  color: white;
+  top: 0;
+  left: 0;
+}
+
+label {
+  color: white;
+  font-family: 'Lexend';
+}
+
+div.detail-container-details h1 {
+  font-family: 'Lexend';
+  width: 100%;
+  color: white;
+  font-size: 35px;
+  padding-bottom: 200px;
+}
+
+.detail-container-details label {
+  display: block;
+}
+
+input#podcastFile, input#coverPhoto {
+  font-family: 'Lexend';
+  color: #8ECAE6;
+  padding-bottom: 10px;
+  display: block;
+}
+
+
+input#username, input#email, input#password, input#confirm-password {
+  color: orange;
+}
+
+.create-button {
+  background-color: orange;
+  color: #023047;
+}
+
+.login {
+  font-family: 'Lexend';
+  padding-left: 20%;
+  padding-top: 5%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loggin-btn {
+  background-color: orange;
+  color: #023047;
+  font-family: 'Lexend';
+  margin-top: 16%;
+}
+
+.loggin-btn:hover {
+  background-color: #8ECAE6;
+}
+
+.create-acc {
+  font-family: 'Lexend';
+  margin-left: 40%;
+  padding-top: 5%;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.home a {
+  color: white;
+  top: 0;
+  left: 0;
+}
+
+.home a:hover {
+  color: orange;
+  text-decoration: line-through;
+}
+
+p a {
+  color: white;
+}
+
+p a:hover {
+  color: orange;
+}
+
+button.submit-button {
+  background-color: orange;
+  color: #023047;
+  font-family: 'Lexend';
+  margin-top: 20%;
+}
+
+div.react-player_shadow {
+  margin-top: 10%;
+}
+
+button#back {
+  background-color: orange;
+  color: #023047;
+  font-family: 'Lexend';
+  margin-top: 40%;
+}
+
+.bridgerton h3 {
+  font-family: 'Lemon';
+}
+
+.bridgerton p {
+  font-family: 'Lexend';
+}
+
+.bridgerton img {
+  border-color: #8ECAE6;
+}
+
+.bridgerton h2 {
+  font-family: 'Lexend';
+  font-size: 32px;
+  color: white;
+  font-weight: 400;
+}
+
+input, textarea {
+  background-color: transparent;
+  border-color: #8ECAE6;
+  color: orange;
+}
+
+.all-link-button {
+  font-family: 'Lexend';
+  padding-right: 40%;
+  padding-top: 5%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  color: white;
+}
+
+.recording-btn, .stop-btn {
+  background-color: orange;
+  color: #023047;
+  font-family: 'Lexend';
+  margin-top: 60%;
+}
+
+.playback-btn {
+  background-color: transparent;
+  color: orange;
+  font-family: 'Lexend';
+  padding: 0;
+  margin: 15px;
+  align-self: center;
+}
+
+.back-link {
+  color: white;
+  display: block;
+  margin-top: 20%;
+}
+
+.back-link:hover {
+  color: orange;
+  text-decoration: line-through;
+}
+
+.edit-btn {
+  background-color: transparent;
+  color: orange;
+  font-family: 'Lexend';
+  padding: 0;
+  margin: 15px;
+  align-self: center;
+}
+
+.edit-btn:hover {
+  background-color: transparent;
+  color: #d419f1;
+  text-decoration: wavy;
+}
+
+.delete-btn {
+  background-color: transparent;
+  color: orange;
+  font-family: 'Lexend';
+  padding: 0;
+  margin: 15px;
+  align-self: center;
+  margin-top: 15%;
+}
+
+.delete-btn:hover {
+  background-color: transparent;
+  color: #d419f1;
+  text-decoration: line-through;
+}
+
+.download-btn {
+  display: block;
+  background-color: #8ECAE6;
+  color: #023047;
+  font-family: 'Lexend';
+}
+
+.details-continue {
+  color: white;
+  display: block;
+  margin-top: 10%;
+}
+
+.details-continue:hover {
+  color: orange;
+  text-decoration: line-through;
+}
+
+.all-link-button:hover {
+  color: orange;
+  text-decoration: line-through;
+}
+
+.podcast-item {
+  border: 1px solid #8ECAE6;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #8ECAE6;
+}
+
+.podcast-item h3, p{
+  color: #8ECAE6;
+}
+
+.podcast-item img {
+  border: 2px solid #8ECAE6;
+  border-radius: 15px;
+  /* padding: 10px; */
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+}
+
+div.image-cover {
+  border-color: #8ECAE6;
+}
+
+img.image-stuff {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.podcast-item h3:hover {
+  color: orange;
+}
+
+li.podcast-item::marker {
+  list-style-type: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.single-title {
+  font-family: 'Lexend';
+  font-size: 25px;
+}
+
+.single-description {
+  font-family: 'Lexend';
+  margin-top: 15%;
+  margin-bottom: 10%;
+}
+
+.react-player {
+  width: 100%;
+  height: auto;
+}
+
+.react-player__play-icon {
+  color: orange;
+}
+
+/* .topLevelLink a {
+  font-family: 'Lexend';
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  transform: translateY(0);
+  left: 0;
+  margin-right: 10px;
+} */
+
+a.allLink:hover {
+  color: orange;
+  text-decoration: line-through;
+  top: 0;
+  left: 0;
+}
+
+a.createLink:hover {
+  color: orange;
+  text-decoration: line-through;
+}
+
+.home-caption h5 {
+  font-family: 'Lemon';
+  text-align: center;
+  color: #00000057;
+  font-size: 24px;
+  margin-top: 45%;
+}
+
+.button-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.fav-btn {
+  background-color: transparent;
+  margin-top: 13%;
+}
+
+.fav-btn:checked {
+  background-color: #d419f1;
+}
+
+.allLinks {
+  color: white;
+}
+
+.allLinks:hover {
+  color: orange;
+  text-decoration: line-through;
+}
+
+a.create-podcast {
+  color: orange;
+  font-family: 'Lexend';
+}
+
+a.create-podcast:hover {
+  color: white;
+  text-decoration: line-through;
+}
+
+.browse h2 {
+  text-align: start;
+  font-weight: 200;
+}
+
+/* Media Screen */
+
+
+
+
+
+@media only screen and (width: 430px) and (height: 932px) and (-webkit-device-pixel-ratio: 3) {
+  #root {
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: #023047;
   }
-  to {
-    transform: rotate(360deg);
+  
+  body {
+    margin: 0;
+    display: flex;
+    place-items: start;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #023047;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
   }
+  
+  .circle {
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .blue {
+    background-color: #8ECAE6;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .orange {
+    background-color: orange;
+    width: 230px;
+    height: 230px;
+  }
+
+  .swiper-button-next::after {
+    color: #466eff;
+  }
+
+  .swiper-button-prev::after {
+    color: #466eff;
+  }
+  
+  .darkblue {
+    background-color: #023047;
+    width: 100px;
+    height: 100px;
+    margin-right: -300px;
+  }
+  
+  .darkbluee {
+    background-color: #023047;
+    width: 120px;
+    height: 120px;
+    margin-right: -300px;
+  }
+  
+  .darkblueee {
+    background-color: #023047;
+    width: 150px;
+    height: 150px;
+    margin-right: -300px;
+  }
+  
+  /* Adjust position for each circle */
+  .blue { top: 160px; left: 60px; }
+  .orange { top: 190px; left: 96px; }
+  .darkblue { top: 150px; left: 250px; }
+  .darkbluee { bottom: 460px; right: 380px; }
+  .darkblueee { top: 150px; right: 570px; }
+  
+  .title {
+    position: absolute;
+    top: 30%;
+    left: 94px;
+    /* transform: translate(-50%, -50%); */
+    text-align: center;
+    color: white;
+  }
+  
+  .title h1 {
+    font-family: 'Lemon';
+    font-size: 45px;
+    margin: 0;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  a.createLink {
+    font-family: 'Lexend';
+    padding-right: 20%;
+    padding-top: 5;
+    top: 0;
+    right: 0;
+    color: white;
+  }
+  
+  .create-account-container h2 {
+    font-family: 'Lemon';
+    top: 0;
+    right: 0;
+    color: orange;
+  }
+  
+  a.allLink {
+    font-family: 'Lexend';
+    padding-left: 20%;
+    padding-top: 5%;
+    top: 0;
+    left: 0;
+    color: white;
+  }
+  
+  .myprof {
+    color: white;
+    top: 0;
+    left: 0;
+  }
+  
+  label {
+    color: white;
+    font-family: 'Lexend';
+  }
+  
+  div.detail-container-details h1 {
+    font-family: 'Lexend';
+    width: 100%;
+    color: white;
+    font-size: 35px;
+    padding-bottom: 200px;
+  }
+  
+  .detail-container-details label {
+    display: block;
+  }
+  
+  input#podcastFile, input#coverPhoto {
+    font-family: 'Lexend';
+    color: #8ECAE6;
+    padding-bottom: 10px;
+    display: block;
+  }
+  
+  
+  input#username, input#email, input#password, input#confirm-password {
+    color: orange;
+  }
+  
+  .create-button {
+    background-color: orange;
+    color: #023047;
+  }
+  
+  .login {
+    font-family: 'Lexend';
+    padding-left: 20%;
+    padding-top: 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .loggin-btn {
+    background-color: orange;
+    color: #023047;
+    font-family: 'Lexend';
+    margin-top: 16%;
+  }
+  
+  .loggin-btn:hover {
+    background-color: #8ECAE6;
+  }
+  
+  .create-acc {
+    font-family: 'Lexend';
+    margin-left: 40%;
+    padding-top: 5%;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  
+  .home a {
+    color: white;
+    top: 0;
+    left: 0;
+  }
+  
+  .home a:hover {
+    color: orange;
+    text-decoration: line-through;
+  }
+  
+  p a {
+    color: white;
+  }
+  
+  p a:hover {
+    color: orange;
+  }
+  
+  button.submit-button {
+    background-color: orange;
+    color: #023047;
+    font-family: 'Lexend';
+    margin-top: 20%;
+  }
+  
+  div.react-player_shadow {
+    margin-top: 10%;
+  }
+  
+  button#back {
+    background-color: orange;
+    color: #023047;
+    font-family: 'Lexend';
+    margin-top: 40%;
+  }
+  
+  .bridgerton h3 {
+    font-family: 'Lemon';
+  }
+  
+  .bridgerton p {
+    font-family: 'Lexend';
+  }
+  
+  .bridgerton img {
+    border-color: #8ECAE6;
+  }
+  
+  .bridgerton h2 {
+    font-family: 'Lexend';
+    font-size: 32px;
+    color: orange;
+    /* text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.555); */
+  }
+  
+  input, textarea {
+    background-color: transparent;
+    border-color: #8ECAE6;
+    color: orange;
+  }
+  
+  .all-link-button {
+    font-family: 'Lexend';
+    padding-right: 40%;
+    padding-top: 5%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: white;
+  }
+
+  a.create-podcast {
+    color: white;
+  }
+
+  a.create-podcast:hover {
+    color: orange;
+    text-decoration: line-through;
+  }
+  
+  .recording-btn, .stop-btn {
+    background-color: orange;
+    color: #023047;
+    font-family: 'Lexend';
+    margin-top: 60%;
+  }
+  
+  .playback-btn {
+    background-color: transparent;
+    color: orange;
+    font-family: 'Lexend';
+    padding: 0;
+    margin: 15px;
+    align-self: center;
+  }
+  
+  .back-link {
+    color: white;
+    display: block;
+    margin-top: 20%;
+  }
+  
+  .back-link:hover {
+    color: orange;
+    text-decoration: line-through;
+  }
+
+  .allLinks {
+    color: white;
+  }
+
+  .allLinks:hover {
+    color: orange;
+    text-decoration: line-through;
+  }
+  
+  .edit-btn {
+    background-color: transparent;
+    color: orange;
+    font-family: 'Lexend';
+    padding: 0;
+    margin: 15px;
+    align-self: center;
+  }
+  
+
+  .edit-btn:hover {
+    background-color: transparent;
+    color: #d419f1;
+    text-decoration: wavy;
+  }
+  
+  .delete-btn {
+    background-color: transparent;
+    color: orange;
+    font-family: 'Lexend';
+    padding: 0;
+    margin: 15px;
+    align-self: center;
+    margin-top: 15%;
+  }
+  
+  .delete-btn:hover {
+    background-color: transparent;
+    color: #d419f1;
+    text-decoration: line-through;
+  }
+  
+  .download-btn {
+    display: block;
+    background-color: #8ECAE6;
+    color: #023047;
+    font-family: 'Lexend';
+  }
+  
+  .details-continue {
+    color: white;
+    display: block;
+    margin-top: 10%;
+  }
+  
+  .details-continue:hover {
+    color: orange;
+    text-decoration: line-through;
+  }
+  
+  .all-link-button:hover {
+    color: orange;
+    text-decoration: line-through;
+  }
+  
+  .podcast-item {
+    border: 1px solid #8ECAE6;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #8ECAE6;
+    margin-right: 10%;
+  }
+  
+  .podcast-item h3, p{
+    color: #8ECAE6;
+  }
+  
+  .podcast-item img {
+    border: 2px solid #8ECAE6;
+    border-radius: 15px;
+    /* padding: 10px; */
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+  }
+  
+  div.image-cover {
+    border-color: #8ECAE6;
+  }
+  
+  img.image-stuff {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+  }
+  
+  .podcast-item h3:hover {
+    color: orange;
+  }
+  
+  li.podcast-item::marker {
+    list-style-type: none;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  .single-title {
+    font-family: 'Lexend';
+    font-size: 25px;
+  }
+  
+  .single-description {
+    font-family: 'Lexend';
+    margin-top: 15%;
+    margin-bottom: 10%;
+  }
+  
+  .react-player {
+    width: 100%;
+    height: auto;
+  }
+  
+  .react-player__play-icon {
+    color: orange;
+  }
+  
+  a.allLink:hover {
+    color: orange;
+    text-decoration: line-through;
+    top: 0;
+    left: 0;
+  }
+  
+  a.createLink:hover {
+    color: orange;
+    text-decoration: line-through;
+  }
+  
+  .home-caption h5 {
+    font-family: 'Lemon';
+    text-align: center;
+    color: #00000057;
+    font-size: 24px;
+    margin-top: 45%;
+  }
+  
+  .button-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .fav-btn {
+    background-color: transparent;
+    margin-top: 13%;
+  }
+  
+  .fav-btn:checked {
+    background-color: #d419f1;
+  }
+
+  /* styles.css */
+
+  /* Wrapper for the swiper */
+  .category-swiper-wrapper {
+    margin-top: 20px;
+  }
+
+  /* Slide container */
+ div.swiper-wrapper {
+  max-width: fit-content;
+  transform: translate3d(-200px, 0px, 0px);
+ }
+
+  /* Category card */
+  .category-card {
+    background-color: orange;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    max-width: auto;
+    overflow: hidden;
+    color: #023047;
+  }
+
+  .category-card h3 {
+    font-family: 'Lexend';
+    font-size: 30px;
+  }
+
+  .swiper-horizontal {
+    overflow: hidden;
+  }
+
+  /* Category title */
+  .category-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  /* Category description */
+  .category-card p {
+    font-size: 14px;
+    color: #555;
+  }
+
+  
+
+
+
+
+
+
+
+
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
