@@ -5,12 +5,14 @@ const db = require('./Backend/db/index')
 const multer = require('multer');
 const fs = require('fs')
 const path = require('path')
-const checkUserLogIn = require('./Backend/middleware/checkUserLogIn')
-// const Podcast = require('./Backend/models/podcast')
+//Session-based storage --->
+const session = require('express-session')
+// <------------
+const categoryController = require('./Backend/controllers/categoryController')
+const favoriteController = require('./Backend/controllers/favoriteController')
 const audioFileController = require('./Backend/controllers/audioFileController')
 const podcastController = require('./Backend/controllers/podcastController')
 const userController =  require('./Backend/controllers/userController')
-const commentController = require('./Backend/controllers/commentController')
 const episodeController = require('./Backend/controllers/episodeController')
 const playlistController = require('./Backend/controllers/playlistController')
 
@@ -66,9 +68,14 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
 app.use(cors())
 app.use(bodyParser.json())
 
-app.get('/protected-route', checkUserLogIn, (req, res) => {
-  res.json({message: 'This is a protected route'})
-})
+
+
+app.use(session({
+  secret: 'theworldisa_sad_and_shittyplace_forregular_degularpeople_likeme',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {secure: true}
+}))
 
 //Routes for User
 console.log("Route for /users registered")
@@ -81,12 +88,18 @@ app.delete('/user/:id', userController.deleteUser)
 //Route for audio upload
 app.post('/upload-audio', audioFileController.uploadAudio)
 
-//Routes for Comments
-app.get('/comments', commentController.getAllComments)
-app.get('/comment/:id', commentController.getCommentById)
-app.post('/comment', commentController.createComment)
-app.put('/comment/:id', commentController.updateComment)
-app.delete('/comment/:id', commentController.deleteComment)
+//Routes for Favorites
+app.get('/favorites', favoriteController.getAllFavorites)
+app.get('/favorite/:id', favoriteController.getFavoriteById)
+app.post('/addfavorite', favoriteController.createFavorite)
+app.delete('/favorite/:id', favoriteController.deleteFavorite)
+
+//Routes for Categories
+app.get('/categories', categoryController.getAllCategories)
+app.get('/category/:id', categoryController.getCategoryById)
+app.post('/category', categoryController.createCategory)
+app.put('/category/:id', categoryController.updateCategory)
+app.delete('/category/:id', categoryController.deleteCategory)
 
 //Routes for Episodes
 app.get('/episodes', episodeController.getAllEpisodes)

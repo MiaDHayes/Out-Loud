@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb')
 const mongoose = require('mongoose')
 const  { Schema } = require('mongoose')
 
@@ -8,7 +9,9 @@ const Podcast = new Schema(
         description: {type: String},
         podcastFile: {type: String},
         coverPhoto: {type: String},
-        episodes: [{type: Schema.Types.ObjectId, ref: 'Episode'}]
+        episodes: [{type: Schema.Types.ObjectId, ref: 'Episode'}],
+        favorite: [{type: Schema.Types.ObjectId, ref: 'Favorite'}],
+        category: {type: ObjectId}
     },
     { timestamps: true }
 )
