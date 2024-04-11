@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import PodcastSwiper from '../helpers/PodcastSwiper';
 import Category from './Category';
 import CategorySwiper from '../helpers/CategorySwiper';
+import PodcastSearch from '../helpers/PodcastSearch';
 
 function PodcastList() {
   const [podcasts, setPodcasts] = useState([]);
@@ -44,6 +45,7 @@ function PodcastList() {
 
   return (
     <div className="bridgerton">
+      <PodcastSearch podcasts={podcasts}/>
       <Link to="/create-podcast" className="allLinks">Create Podcast</Link>
       <h2>Browse</h2>
       <div className="podcast-slider">

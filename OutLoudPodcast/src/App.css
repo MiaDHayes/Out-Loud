@@ -467,6 +467,14 @@ a.create-podcast:hover {
   font-weight: 200;
 }
 
+.searchbar {
+  border-radius: 15%;
+  max-width: 800px;
+  font-family: 'Lexend';
+  margin-bottom: 15px;
+  color: orange;
+}
+
 /* Media Screen */
 
 
@@ -498,6 +506,13 @@ a.create-podcast:hover {
     height: 40vh;
   }
   
+  .searchbar {
+    border-radius: 15%;
+    max-width: 500px;
+    font-family: 'Lexend';
+    margin-bottom: 15px;
+  }
+
   .circle {
     border-radius: 50%;
     position: absolute;
