@@ -32,6 +32,9 @@ function PodcastList() {
     <div className= 'bridgerton'>
       <Link to= '/all-podcasts' className='allLinks'>All Podcasts</Link>
       <h2>Browse</h2>
+      <div className= 'podcast-slider'>
+        <PodcastSwiper podcasts={featuredPodcasts} title= 'Featured Podcasts'/>
+      </div>
       <ul>
         {podcasts.map(podcast => {
           console.log('Podcast file:', podcast.podcastFile)
@@ -52,7 +55,6 @@ function PodcastList() {
           )
           })}
       </ul>
-      <PodcastSwiper podcasts={featuredPodcasts} title= 'Featured Podcasts'/>
       <button id='back' onClick={() => navigate('/home')}>Go Back</button>
     </div>
   )
