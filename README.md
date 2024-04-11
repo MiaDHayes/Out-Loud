@@ -7,9 +7,9 @@ OUT LOUD is a podcast app that allows users to explore a wide range of podcasts 
 
 ## Wireframes
 
-![Homepage Wireframe](assets/5F4E98CB-40E8-492D-97FC-FFFAC45F9BE6.jpeg "Wireframe"),
-
 ![Homepage Wireframe](assets/9C97FFC8-59A8-4AC4-9360-7222D560D214.jpeg "ERD"),
+
+![Homepage Wireframe](assets/5F4E98CB-40E8-492D-97FC-FFFAC45F9BE6.jpeg "Wireframe"),
 
 ![Homepage Wireframe](assets/68A6F3E5-DF2A-44F6-9D40-CDD2D02A3FF3.jpeg "Component Hiearchy"),
 
